@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     description: "큰기쁨의교회 주일예배 주보입니다.",
     url: "https://church-jubbo.vercel.app",
     siteName: "큰기쁨의교회 주보",
-    images: "/church.png",
+    images: "/image.png",
     type: "website",
   },
 };
