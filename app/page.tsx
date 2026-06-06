@@ -1,65 +1,112 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div style={{ maxWidth: '480px', margin: '0 auto', background: '#f0ede6', minHeight: '100vh', fontFamily: "'Noto Sans KR', sans-serif" }}>
+
+      {/* 헤더 이미지 */}
+      <div style={{
+        width: '100%',
+        aspectRatio: '2/1',
+        background: 'linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url("https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800") center/cover no-repeat',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        textAlign: 'center',
+      }}>
+        <div style={{ fontSize: '40px' }}>✝</div>
+        <h1 style={{ margin: '8px 0 0', fontSize: '24px', fontWeight: 'bold', letterSpacing: '2px' }}>큰기쁨의교회</h1>
+        <p style={{ margin: '6px 0 0', fontSize: '14px', opacity: 0.9 }}>축복의 통로</p>
+      </div>
+
+      {/* 날짜 바 */}
+      <div style={{ background: '#1e5c3e', padding: '10px 20px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+        {['2026년 6월 7일', '주일예배', '오전 11:00'].map((chip) => (
+          <span key={chip} style={{ background: 'rgba(255,255,255,0.15)', border: '0.5px solid rgba(255,255,255,0.3)', borderRadius: '99px', padding: '3px 12px', fontSize: '12px', color: 'rgba(255,255,255,0.9)' }}>{chip}</span>
+        ))}
+      </div>
+
+      {/* 이번 주 말씀 */}
+      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
+        <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 말씀</div>
+        <div style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem 1.25rem 1.25rem 1.5rem', border: '0.5px solid #e0dbd0', borderLeft: '4px solid #1e5c3e' }}>
+          <div style={{ fontSize: '11px', color: '#999', marginBottom: '5px' }}>시리즈 · 기쁨으로 사는 삶</div>
+          <div style={{ fontFamily: 'serif', fontSize: '19px', fontWeight: 700, lineHeight: 1.5, color: '#1a1a1a', marginBottom: '0.8rem' }}>"두려워하지 말라,<br/>내가 너와 함께하노라"</div>
+          <div style={{ fontSize: '13px', color: '#1e5c3e', fontWeight: 500, padding: '0.6rem 0', borderTop: '0.5px solid #eee' }}>📖 이사야 41장 10절</div>
+          <div style={{ fontSize: '13px', lineHeight: 1.85, color: '#555', paddingTop: '0.75rem', borderTop: '0.5px solid #eee' }}>
+            하나님은 우리가 홀로 광야를 걷는다고 느낄 때에도 손을 놓지 않으십니다. 두려움이 아닌 믿음으로, 오늘 이 자리에서 하나님의 동행을 새롭게 경험하세요.
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {/* 이번 주 광고 */}
+      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
+        <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
+        {[
+          { day: '8', dow: '일', tag: '예배', text: '예배 후 새 가족 환영 모임이 있습니다.' },
+          { day: '11', dow: '수', tag: '소그룹', text: '수요 소그룹 모임이 오후 7시 30분에 진행됩니다.' },
+          { day: '15', dow: '일', tag: '특별', text: '다음 주일 찬양예배가 예정되어 있습니다.' },
+        ].map((item, i) => (
+          <div key={i} style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '12px', marginBottom: '10px' }}>
+            <div style={{ textAlign: 'center', minWidth: '36px' }}>
+              <div style={{ fontSize: '22px', fontWeight: 700, color: '#1e5c3e', lineHeight: 1 }}>{item.day}</div>
+              <div style={{ fontSize: '10px', color: '#aaa', marginTop: '2px' }}>{item.dow}</div>
+            </div>
+            <div>
+              <span style={{ display: 'inline-block', fontSize: '10px', padding: '2px 8px', borderRadius: '99px', background: '#e4f4ec', color: '#1e5c3e', fontWeight: 500, marginBottom: '5px' }}>{item.tag}</span>
+              <div style={{ fontSize: '14px', lineHeight: 1.6, color: '#333' }}>{item.text}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* 예배 안내 */}
+      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
+        <div style={{ fontSize: '10px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', marginBottom: '8px' }}>
+          {[
+            { name: '주일예배', time: '11:00' },
+            { name: '주일오후예배', time: '14:00' },
+            { name: '수요예배', time: '19:30' },
+            { name: '금요예배', time: '19:30' },
+            { name: '새벽예배', time: '05:30' },
+            { name: '유초등부', time: '15:00' },
+            { name: '학생부예배', time: '13:30' },
+            { name: '청년부예배', time: '13:30' },
+          ].map((item, i) => (
+            <div key={i} style={{ background: '#fff', borderRadius: '12px', padding: '0.8rem 1rem', border: '0.5px solid #e0dbd0' }}>
+              <div style={{ fontSize: '11px', color: '#999', marginBottom: '3px' }}>{item.name}</div>
+              <div style={{ fontSize: '14px', fontWeight: 500, color: '#1a1a1a' }}>{item.time}</div>
+            </div>
+          ))}
         </div>
-      </main>
+
+        {/* 위치 */}
+        <div style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '10px', marginBottom: '8px' }}>
+          <span style={{ fontSize: '17px' }}>📍</span>
+          <div>
+            <div style={{ fontSize: '11px', color: '#999', marginBottom: '2px' }}>위치</div>
+            <div style={{ fontSize: '13px', fontWeight: 500, color: '#1a1a1a' }}>경기도 시흥시 신천동 두문로 54</div>
+          </div>
+        </div>
+
+        {/* 연락처 */}
+        <div style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '10px' }}>
+          <span style={{ fontSize: '17px' }}>📞</span>
+          <div>
+            <div style={{ fontSize: '11px', color: '#999', marginBottom: '2px' }}>연락처</div>
+            <div style={{ fontSize: '13px', fontWeight: 500, color: '#1a1a1a' }}>010-8336-6632</div>
+          </div>
+        </div>
+      </div>
+
+      {/* 푸터 */}
+      <div style={{ background: '#1e5c3e', padding: '1.5rem', textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '12px', lineHeight: 2 }}>
+        <div style={{ color: '#fff', fontSize: '14px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>큰기쁨의교회</div>
+        대한예수교장로회 · 경기도 시흥시 신천동 863-29<br/>
+        함께 누리는 큰 기쁨 🕊
+      </div>
+
     </div>
   );
 }
