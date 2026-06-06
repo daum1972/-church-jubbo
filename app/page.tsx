@@ -23,7 +23,7 @@ export default function Home() {
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
         <div style={{ fontSize: '18px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 말씀</div>
         <div style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem 1.25rem 1.25rem 1.5rem', border: '0.5px solid #e0dbd0', borderLeft: '4px solid #1e5c3e' }}>
-          <div style={{ fontSize: '13px', color: '#999', marginBottom: '5px' }}>시리즈 · 기쁨으로 사는 삶</div>
+          <div style={{ fontSize: '13px', color: '#555', marginBottom: '5px' }}>시리즈 · 기쁨으로 사는 삶</div>
           <div style={{ fontFamily: 'serif', fontSize: '21px', fontWeight: 700, lineHeight: 1.5, color: '#1a1a1a', marginBottom: '0.8rem' }}>"두려워하지 말라,<br/>내가 너와 함께하노라"</div>
           <div style={{ fontSize: '15px', color: '#1e5c3e', fontWeight: 500, padding: '0.6rem 0', borderTop: '0.5px solid #eee' }}>📖 이사야 41장 10절</div>
           <div style={{ fontSize: '15px', lineHeight: 1.85, color: '#555', paddingTop: '0.75rem', borderTop: '0.5px solid #eee' }}>
@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* 예배 순서 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 순서</div>
+        <div style={{ fontSize: '18px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 순서</div>
         <div style={{ background: '#fff', borderRadius: '16px', padding: '1rem 1.25rem', border: '0.5px solid #e0dbd0' }}>
           {[
             { num: '1', title: '찬양과 경배' },
@@ -54,7 +54,7 @@ export default function Home() {
 
       {/* 이번 주 광고 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
+        <div style={{ fontSize: '18px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
         {[
           { day: '8', dow: '일', tag: '예배', text: '예배 후 새 가족 환영 모임이 있습니다.' },
           { day: '11', dow: '수', tag: '소그룹', text: '수요 소그룹 모임이 오후 7시 30분에 진행됩니다.' },
@@ -74,8 +74,8 @@ export default function Home() {
       </div>
 
       {/* 예배 안내 */}
-      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
+      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #9f9a90' }}>
+        <div style={{ fontSize: '18px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', marginBottom: '8px' }}>
           {[
             { name: '주일예배', time: '11:00' },
@@ -115,8 +115,8 @@ export default function Home() {
 
       {/* 푸터 */}
       <div style={{ background: '#1e5c3e', padding: '1.5rem', textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '13px', lineHeight: 2 }}>
-        <div style={{ color: '#fff', fontSize: '18px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>큰기쁨의교회</div>
-        대한예수교장로회 · 경기도 시흥시 신천동 두문로 54<br/>
+        <div style={{ color: '#fff', fontSize: '18px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>대한예수교장로회 큰기쁨의교회</div>
+        경기도 시흥시 신천동 두문로 54<br/>
         함께 누리는 큰 기쁨 🕊
       </div>
 
