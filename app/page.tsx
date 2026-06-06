@@ -6,7 +6,9 @@ export default function Home() {
       <div style={{
         width: '100%',
         aspectRatio: '2/1',
-        background: 'linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url("https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800") center/cover no-repeat',
+        backgroundImage: 'url("/church.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -14,14 +16,11 @@ export default function Home() {
         color: 'white',
         textAlign: 'center',
       }}>
-        <div style={{ fontSize: '40px' }}>✝</div>
-        <h1 style={{ margin: '8px 0 0', fontSize: '24px', fontWeight: 'bold', letterSpacing: '2px' }}>큰기쁨의교회</h1>
-        <p style={{ margin: '6px 0 0', fontSize: '14px', opacity: 0.9 }}>축복의 통로</p>
       </div>
 
       {/* 날짜 바 */}
       <div style={{ background: '#1e5c3e', padding: '10px 20px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-        {['2026년 6월 7일', '주일예배', '오전 11:00'].map((chip) => (
+        {['2026년 6월 8일', '주일예배', '오전 11:00'].map((chip) => (
           <span key={chip} style={{ background: 'rgba(255,255,255,0.15)', border: '0.5px solid rgba(255,255,255,0.3)', borderRadius: '99px', padding: '3px 12px', fontSize: '12px', color: 'rgba(255,255,255,0.9)' }}>{chip}</span>
         ))}
       </div>
@@ -103,7 +102,7 @@ export default function Home() {
       {/* 푸터 */}
       <div style={{ background: '#1e5c3e', padding: '1.5rem', textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '12px', lineHeight: 2 }}>
         <div style={{ color: '#fff', fontSize: '14px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>큰기쁨의교회</div>
-        대한예수교장로회 · 경기도 시흥시 신천동 863-29<br/>
+        대한예수교장로회 · 경기도 시흥시 신천동 두문로 54<br/>
         함께 누리는 큰 기쁨 🕊
       </div>
 
