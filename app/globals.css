@@ -11,7 +11,11 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
+input, textarea {
+  -webkit-text-fill-color: #1a1a1a;
+  opacity: 1;
+  color: #1a1a1a;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
