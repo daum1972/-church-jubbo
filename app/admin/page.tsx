@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { db } from '../firebase';
+import { doc, setDoc } from 'firebase/firestore';
 
-const PASSWORD = '1234'; // 비밀번호 여기서 변경 가능
+const PASSWORD = '1234';
 
 const defaultData = {
   date: '2026년 6월 8일',
@@ -23,6 +25,7 @@ export default function AdminPage() {
   const [error, setError] = useState('');
   const [data, setData] = useState(defaultData);
   const [saved, setSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const handleLogin = () => {
     if (pw === PASSWORD) {
@@ -33,10 +36,16 @@ export default function AdminPage() {
     }
   };
 
-  const handleSave = () => {
-    localStorage.setItem('jubboData', JSON.stringify(data));
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await setDoc(doc(db, 'jubbo', 'current'), data);
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
+    } catch (e) {
+      alert('저장 실패! 다시 시도해주세요.');
+    }
+    setSaving(false);
   };
 
   const updateAnnouncement = (i: number, field: string, value: string) => {
@@ -152,9 +161,9 @@ export default function AdminPage() {
         </div>
 
         {/* 저장 버튼 */}
-        <button onClick={handleSave}
+        <button onClick={handleSave} disabled={saving}
           style={{ width: '100%', padding: '1rem', background: '#1e5c3e', color: '#fff', border: 'none', borderRadius: '12px', fontSize: '16px', fontWeight: 700, cursor: 'pointer' }}>
-          {saved ? '✅ 저장됐어요!' : '저장하기'}
+          {saving ? '저장 중...' : saved ? '✅ 저장됐어요!' : '저장하기'}
         </button>
 
       </div>

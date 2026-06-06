@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { db } from './firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 const defaultData = {
-  date: '2026년 6월 7일',
+  date: '2026년 6월 8일',
   sermonTitle: '"두려워하지 말라, 내가 너와 함께하노라"',
   sermonSeries: '시리즈 · 기쁨으로 사는 삶',
   bibleVerse: '이사야 41장 10절',
@@ -19,10 +21,18 @@ export default function Home() {
   const [data, setData] = useState(defaultData);
 
   useEffect(() => {
-    const saved = localStorage.getItem('jubboData');
-    if (saved) {
-      setData(JSON.parse(saved));
-    }
+    const fetchData = async () => {
+      try {
+        const docRef = doc(db, 'jubbo', 'current');
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setData(docSnap.data() as typeof defaultData);
+        }
+      } catch (e) {
+        console.error('데이터 불러오기 실패:', e);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
@@ -47,7 +57,7 @@ export default function Home() {
 
       {/* 이번 주 말씀 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '16px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 말씀</div>
+        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 말씀</div>
         <div style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem 1.25rem 1.25rem 1.5rem', border: '0.5px solid #e0dbd0', borderLeft: '4px solid #1e5c3e' }}>
           <div style={{ fontSize: '15px', color: '#666', marginBottom: '5px' }}>{data.sermonSeries}</div>
           <div style={{ fontFamily: 'serif', fontSize: '21px', fontWeight: 700, lineHeight: 1.5, color: '#1a1a1a', marginBottom: '0.8rem' }}>{data.sermonTitle}</div>
@@ -60,13 +70,13 @@ export default function Home() {
 
       {/* 예배 순서 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '16px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 순서</div>
+        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 순서</div>
         <div style={{ background: '#fff', borderRadius: '16px', padding: '1rem 1.25rem', border: '0.5px solid #e0dbd0' }}>
           {[
             { num: '1', title: '찬양과 경배' },
             { num: '2', title: '대표기도' },
             { num: '3', title: '설교말씀' },
-            { num: '4', title: '헌금' },
+            { num: '4', title: '봉헌' },
             { num: '5', title: '교회 소식' },
             { num: '6', title: '축도' },
           ].map((item, i, arr) => (
@@ -80,7 +90,7 @@ export default function Home() {
 
       {/* 이번 주 광고 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '16px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
+        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
         {data.announcements.map((item, i) => (
           <div key={i} style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '12px', marginBottom: '10px' }}>
             <div style={{ textAlign: 'center', minWidth: '36px' }}>
@@ -96,8 +106,8 @@ export default function Home() {
       </div>
 
       {/* 예배 안내 */}
-      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #a8a59c' }}>
-        <div style={{ fontSize: '16px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
+      <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
+        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', marginBottom: '8px' }}>
           {[
             { name: '주일예배', time: '11:00' },
@@ -137,8 +147,8 @@ export default function Home() {
 
       {/* 푸터 */}
       <div style={{ background: '#1e5c3e', padding: '1.5rem', textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '13px', lineHeight: 2 }}>
-        <div style={{ color: '#fff', fontSize: '16px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>대한예수교장로회 큰기쁨의교회</div>
-        
+        <div style={{ color: '#fff', fontSize: '16px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>큰기쁨의교회</div>
+        대한예수교장로회 · 경기도 시흥시 신천동 두문로 54<br/>
         함께 누리는 큰 기쁨 🕊
       </div>
 
