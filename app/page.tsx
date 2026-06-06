@@ -57,12 +57,12 @@ export default function Home() {
 
       {/* 이번 주 말씀 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 말씀</div>
+        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 말씀</div>
         <div style={{ background: '#fff', borderRadius: '16px', padding: '1.25rem 1.25rem 1.25rem 1.5rem', border: '0.5px solid #e0dbd0', borderLeft: '4px solid #1e5c3e' }}>
-          <div style={{ fontSize: '15px', color: '#666', marginBottom: '5px' }}>{data.sermonSeries}</div>
+          <div style={{ fontSize: '17px', color: '#666', marginBottom: '5px' }}>{data.sermonSeries}</div>
           <div style={{ fontFamily: 'serif', fontSize: '21px', fontWeight: 700, lineHeight: 1.5, color: '#1a1a1a', marginBottom: '0.8rem' }}>{data.sermonTitle}</div>
-          <div style={{ fontSize: '15px', color: '#1e5c3e', fontWeight: 500, padding: '0.6rem 0', borderTop: '0.5px solid #eee' }}>📖 {data.bibleVerse}</div>
-          <div style={{ fontSize: '15px', lineHeight: 1.85, color: '#555', paddingTop: '0.75rem', borderTop: '0.5px solid #eee' }}>
+          <div style={{ fontSize: '17px', color: '#1e5c3e', fontWeight: 500, padding: '0.6rem 0', borderTop: '0.5px solid #eee' }}>📖 {data.bibleVerse}</div>
+          <div style={{ fontSize: '17px', lineHeight: 1.85, color: '#555', paddingTop: '0.75rem', borderTop: '0.5px solid #eee' }}>
             {data.sermonContent}
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Home() {
 
       {/* 예배 순서 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 순서</div>
+        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 순서</div>
         <div style={{ background: '#fff', borderRadius: '16px', padding: '1rem 1.25rem', border: '0.5px solid #e0dbd0' }}>
           {[
             { num: '1', title: '찬양과 경배' },
@@ -82,7 +82,7 @@ export default function Home() {
           ].map((item, i, arr) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '14px', padding: '0.7rem 0', borderBottom: i < arr.length - 1 ? '0.5px solid #f0ede6' : 'none' }}>
               <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: '#1e5c3e', color: '#fff', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.num}</div>
-              <div style={{ fontSize: '15px', color: '#333', fontWeight: 500 }}>{item.title}</div>
+              <div style={{ fontSize: '17px', color: '#333', fontWeight: 500 }}>{item.title}</div>
             </div>
           ))}
         </div>
@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* 이번 주 광고 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
+        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>이번 주 광고</div>
         {data.announcements.map((item, i) => (
           <div key={i} style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '12px', marginBottom: '10px' }}>
             <div style={{ textAlign: 'center', minWidth: '36px' }}>
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
             <div>
               <span style={{ display: 'inline-block', fontSize: '12px', padding: '2px 8px', borderRadius: '99px', background: '#e4f4ec', color: '#1e5c3e', fontWeight: 500, marginBottom: '5px' }}>{item.tag}</span>
-              <div style={{ fontSize: '15px', lineHeight: 1.6, color: '#333' }}>{item.text}</div>
+              <div style={{ fontSize: '17px', lineHeight: 1.6, color: '#333' }}>{item.text}</div>
             </div>
           </div>
         ))}
@@ -107,7 +107,7 @@ export default function Home() {
 
       {/* 예배 안내 */}
       <div style={{ padding: '1.5rem', borderBottom: '0.5px solid #e0dbd0' }}>
-        <div style={{ fontSize: '12px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
+        <div style={{ fontSize: '14px', letterSpacing: '0.18em', color: '#1e5c3e', fontWeight: 700, marginBottom: '1rem' }}>예배 안내</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', marginBottom: '8px' }}>
           {[
             { name: '주일예배', time: '11:00' },
@@ -120,8 +120,8 @@ export default function Home() {
             { name: '청년부예배', time: '13:30' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#fff', borderRadius: '12px', padding: '0.8rem 1rem', border: '0.5px solid #e0dbd0' }}>
-              <div style={{ fontSize: '15px', color: '#666', marginBottom: '3px' }}>{item.name}</div>
-              <div style={{ fontSize: '16px', fontWeight: 500, color: '#1a1a1a' }}>{item.time}</div>
+              <div style={{ fontSize: '17px', color: '#666', marginBottom: '3px' }}>{item.name}</div>
+              <div style={{ fontSize: '17px', fontWeight: 500, color: '#1a1a1a' }}>{item.time}</div>
             </div>
           ))}
         </div>
@@ -130,8 +130,8 @@ export default function Home() {
         <div style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '10px', marginBottom: '8px' }}>
           <span style={{ fontSize: '19px' }}>📍</span>
           <div>
-            <div style={{ fontSize: '15px', color: '#666', marginBottom: '2px' }}>위치</div>
-            <div style={{ fontSize: '15px', fontWeight: 500, color: '#1a1a1a' }}>경기도 시흥시 신천동 두문로 54</div>
+            <div style={{ fontSize: '17px', color: '#666', marginBottom: '2px' }}>위치</div>
+            <div style={{ fontSize: '17px', fontWeight: 500, color: '#1a1a1a' }}>경기도 시흥시 신천동 두문로 54</div>
           </div>
         </div>
 
@@ -139,16 +139,16 @@ export default function Home() {
         <div style={{ background: '#fff', borderRadius: '12px', padding: '0.9rem 1rem', border: '0.5px solid #e0dbd0', display: 'flex', gap: '10px' }}>
           <span style={{ fontSize: '19px' }}>📞</span>
           <div>
-            <div style={{ fontSize: '15px', color: '#666', marginBottom: '2px' }}>연락처</div>
-            <div style={{ fontSize: '15px', fontWeight: 500, color: '#1a1a1a' }}>010-8336-6632</div>
+            <div style={{ fontSize: '17px', color: '#666', marginBottom: '2px' }}>연락처</div>
+            <div style={{ fontSize: '17px', fontWeight: 500, color: '#1a1a1a' }}>010-8336-6632</div>
           </div>
         </div>
       </div>
 
       {/* 푸터 */}
       <div style={{ background: '#1e5c3e', padding: '1.5rem', textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '13px', lineHeight: 2 }}>
-        <div style={{ color: '#fff', fontSize: '16px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>큰기쁨의교회</div>
-        대한예수교장로회 · 경기도 시흥시 신천동 두문로 54<br/>
+        <div style={{ color: '#fff', fontSize: '17px', display: 'block', marginBottom: '2px', fontWeight: 'bold' }}>대한예수교장로회 큰기쁨의교회</div>
+        경기도 시흥시 신천동 두문로 54<br/>
         함께 누리는 큰 기쁨 🕊
       </div>
 
